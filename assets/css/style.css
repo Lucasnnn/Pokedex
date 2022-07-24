@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url(../img/fundo.jpg);
+  background-position: top center;
+}
+
+@font-face {
+  font-family: hollow;
+  src: url(../img/Pokemon\ Hollow.ttf);
+}
+
+header {
+  font-family: hollow;
+  font-size: 6vw;
+  text-align: center;
+  color: white;
+  text-shadow: 10px 10px 5px grey;
+}
+
+#pokemons {
+  display: flex;
+}
+
+#busca{
+  width: 30vw;
+  height: 2vw;
+  margin-inline: 35vw;
+  font-size: 2vw;
+
+}
+
+.container,
+.card,
+.card_front,
+.card_back {
+  width: 25vw;
+  height: 25vw;
+  margin: 3em auto;
+}
+
+.card_front,
+.card_back {
+  border-radius: 2vw;
+  background-color: #ffffffd1;
+  box-shadow: 0px 5px 25px 0px rgb(130, 0, 0);
+  height: 28vw;
+}
+
+
+.card-symbol {
+  font-size: 2vw;
+  color: rgb(0, 0, 0);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  font-family: "Cantata One", serif;
+}
+
+@supports (display: flex) {
+  .card_front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.card_front {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card_front img{
+  width: 100%;
+}
+
+.card_front .card-symbol {
+  font-size: 2vw;
+  text-transform: uppercase;
+  font-family: "Cantata One", serif;
+  color: rgb(0, 0, 0);
+}
+
+.card-text {
+  height: auto;
+  line-height: 1.4;
+}
+
+.card-text p {
+  text-align: center;
+}
+
+/* FLIP CARD STYLING */
+.container {
+  perspective: 1000px;
+}
+
+.container:hover .card,
+.container.hover {
+  transform: rotateY(-180deg);
+}
+
+.card {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card_front,
+.card_back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card_front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.card_back {
+  transform: rotateY(-180deg);
+}
+
+#tipo{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tipo p{
+  margin: 1.5vw;
+  width: 40%;
+  background-color: #ff0000ad;
+  border-radius: 0.5vw;
+}
+
+#numero{
+  margin: 0;
+  font-size: 2.5vw;
+  background-color: whitesmoke;
+}
+
+#descricao{
+  font-size: 2vw;
+}
